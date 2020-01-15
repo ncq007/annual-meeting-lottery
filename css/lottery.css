@@ -1,0 +1,131 @@
+
+* {
+	margin:0;
+	padding:0;
+}
+
+html, body {
+	width: 100vw;
+	height: 100vh;
+	background: url('../images/bg1.jpg') no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+i {
+	font-style: normal;
+}
+
+.ell-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.top-logo {
+	position: absolute;
+	top: 1vw;
+	left: 2vw;
+	width: 12.6vw;
+	height: 1.65vw;
+	cursor: pointer;
+}
+
+.lottery-container {
+	position: relative;
+	top: 50%;
+	width: 100vw;
+	height: 26.48vw;
+	margin-top: -13.24vw;
+	overflow: hidden;
+}
+
+.lottery-container .lottery-left .img{
+	position: absolute;
+	top: 3vw;
+	left: 17vw;
+	width: 37.6vw;
+	height: 22.2vw;
+}
+
+.lottery-container .lottery-right .setting{
+	position: absolute;
+	top: 3vw;
+	right: 25vw;
+	width: 17.8vw;
+	height: 20.6vw;
+}
+
+.lottery-container .lottery-right .title {
+	position: absolute;
+	top: 4vw;
+	right: 32vw;
+	color: #E13907;
+	font-size: 0.1rem;
+}
+
+.lottery-container .lottery-right .title .num {
+	color: #999;
+	font-size: 0.07rem;
+	margin-left: 0.5vw;
+}
+
+.lottery-container .lottery-right .select_lucky_number {
+	position: absolute;
+	top: 6.5vw;
+	right: 31vw;
+	width: 5vw;
+	height: 2vw;
+	border: none;
+	background: rgba(0, 0, 0, .1);
+	padding: 0 0.5vw;
+	border-radius: 0.2vw;
+	text-align: center;
+	font-size: 0.1rem;
+}
+
+.lottery-container .lottery-right .select_lucky_number:focus {
+	outline: 0;
+}
+
+.lottery-container .lottery-right .button {
+	position: absolute;
+	bottom: 4vw;
+	right: 29.5vw;
+	width: 8.8vw;
+	height: 2.3vw;
+	color: #fff;
+	font-size: 0.07rem;
+}
+
+.lottery-container .lottery-right .button .button-img {
+	width: 8.8vw;
+	height: 2.3vw;
+}
+
+.lottery-container .lottery-right .button .start {
+	position: absolute;
+	width: 8.8vw;
+	height: 2.3vw;
+	line-height: 2.3vw;
+	left: 0;
+	top: 0;
+	text-align: center;
+	font-size: .07rem;
+}
+
+::-webkit-input-placeholder {
+	font-size: 0.07rem;
+}
+::-moz-placeholder { 
+	font-size: 0.07rem;
+}
+:-ms-input-placeholder {
+	font-size: 0.07rem;
+}
+:-moz-placeholder {
+	font-size: 0.07rem;
+}

@@ -1,0 +1,197 @@
+
+* {
+	margin:0;
+	padding:0;
+}
+
+html, body {
+	width: 100vw;
+	height: 100vh;
+	background: url('../images/bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+i {
+	font-style: normal;
+}
+
+.ell-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.top-left {
+	position: absolute;
+	width: 11.7vw;
+	height: 11.2vw;
+	top: 0vw;
+	left: 0;
+}
+
+.top-right {
+	position: absolute;
+	width: 11.7vw;
+	height: 11.2vw;
+	top: 0;
+	right: 0;
+}
+
+.top-logo {
+	position: absolute;
+	top: 1vw;
+	right: 50%;
+	width: 12.6vw;
+	height: 1.65vw;
+	margin-right: -6.3vw;
+}
+
+.top-logo-btn {
+	position: absolute;
+	top: 1vw;
+	right: 50%;
+	width: 12.6vw;
+	height: 1.65vw;
+	margin-right: -6.3vw;
+	opacity: 0;
+	z-index: 9;
+	cursor: pointer;
+}
+
+.footer {
+	position: absolute;
+	width: 100vw;
+	height: 6.1vw;
+	bottom: 0;
+	left: 0;
+}
+
+.container {
+	position: relative;
+	top: 50%;
+	width: 100vw;
+	height: 26.48vw;
+	margin-top: -13.24vw;
+	overflow: hidden;
+}
+
+.container .user-left, .container .user-right {
+	position: relative;
+	z-index: 999;
+}
+
+.container .user-left .title {
+	position: absolute;
+	top: 1vw;
+	left: 4.5vw;
+	width: 15.4vw;
+	height: 5vw;
+}
+
+.container .user-left .gift-img {
+	position: absolute;
+	top: 6.5vw;
+	left: 1vw;
+	margin-top: 1vw;
+	width: 25.1vw;
+	height: 18.6vw;
+}
+
+.container .user-left .code {
+	position: absolute;
+	width: 10vw;
+	height: 10vw;
+	left: 6vw;
+	top: 14.3vw;
+}
+
+.container .user-middle {
+	position: absolute;
+	top: 4vw;
+	left: 18vw;
+	width: 64vw;
+	height: 20vw;
+	overflow: hidden;
+}
+
+.container .user-right .title {
+	position: absolute;
+	top: 1vw;
+	right: 3.5vw;
+	width: 15.4vw;
+	height: 5vw;
+}
+
+.container .user-right .gift-img {
+	position: absolute;
+	top: 6.5vw;
+	right: -4vw;
+	margin-top: 1vw;
+	width: 25.1vw;
+	height: 18.6vw;
+}
+
+.container .user-right .code {
+	position: absolute;
+	width: 10vw;
+	height: 10vw;
+	right: 6vw;
+	top: 14.3vw;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*组件主样式*/
+.tanmuContent {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* opacity: 0; */
+	clear: both;
+	padding: 0 0.4vw;
+	border-radius: 30px;
+	box-sizing: border-box;
+	width: 11.5vw;
+	height: 2.3vw;
+	background-color:rgba(1,1,1,0.3);
+	font-size: .075rem;
+	color: #fff;
+	animation: colorchange 3s infinite alternate;
+	-webkit-animation: colorchange 3s infinite alternate;
+	/*Safari and Chrome*/
+}
+
+
+.avatar {
+	width: 2vw;
+	height: 2vw;
+	margin: 0.15vw 0.25vw 0 0;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.color {
+	color: #EFA227;
+	margin-left: 0.4vw;
+}
+
+@keyframes colorchange {
+	0% {
+		color: fff;
+	}
+
+	50% {
+		color: fff;
+	}
+
+	100% {
+		color: #fff;
+	}
+}
