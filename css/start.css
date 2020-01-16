@@ -7,13 +7,24 @@
 html, body {
 	width: 100vw;
 	height: 100vh;
-	background: url('../images/bg.jpg') no-repeat;
+	background: url('../images/bg.png') no-repeat;
 	background-size: 100% 100%;
 	overflow: hidden;
 }
 
 i {
 	font-style: normal;
+}
+
+.top-logo-btn {
+	position: absolute;
+	top: 5vh;
+	left: 2vw;
+	width: 16vw;
+	height: 5vh;
+	opacity: 0;
+	z-index: 9;
+	cursor: pointer;
 }
 
 .container {
@@ -139,24 +150,24 @@ i {
 
 .winners {
   position: relative;
-  left: 25vw;
-	width: 50vw;
+  left: 20vw;
+	width: 60vw;
 	height: 100vh;
 	overflow: hidden;
 }
 
 .winner-img {
 	position: absolute;
-	top: 2vw;
+	top: 4vh;
 	left: 50%;
-	margin-left: -4.82vw;
-	width: 9.65vw;
-	height: 3.15vw;
+	margin-left: -10.95vw;
+	width: 21.9vw;
+	height: 12.7vh;
 }
 
 .winner-list {
   position: absolute;
-  top: 5vw;
+  top: 18vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -169,12 +180,13 @@ i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4vw;
+  height: 8vh;
+  margin-bottom: 2vh;
 }
 
 .lpl_userImage {
-  width: 3vw;
-  height: 3vw;
+  width: 6vh;
+  height: 6vh;
   border: 2px solid #ccc;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -183,17 +195,17 @@ i {
 
 .lpl_userTel {
   color: #fff;
-  font-size: 0.08rem;
+  font-size: 0.1rem;
 }
 
 .lpl_userName {
   color: #fff;
-  font-size: 0.08rem;
+  font-size: 0.1rem;
 }
 
 .lucky_userName {
   text-align: center;
-  margin-top: 0.3vw;
+  margin-top: 0.5vw;
   display: block;
   /* overflow: hidden;
   text-overflow: ellipsis;

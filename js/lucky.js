@@ -262,4 +262,8 @@ $(function () {
       alert('已经全部中过奖了~')
     }
   }
+
+  $('#goIndex').click(function () {
+    window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
+  })
 })

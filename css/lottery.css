@@ -7,7 +7,7 @@
 html, body {
 	width: 100vw;
 	height: 100vh;
-	background: url('../images/bg1.jpg') no-repeat;
+	background: url('../images/bg1.png') no-repeat;
 	background-size: 100% 100%;
 	overflow: hidden;
 }
@@ -25,66 +25,77 @@ i {
   -webkit-box-orient: vertical;
 }
 
-.top-logo {
+/* .top-logo {
 	position: absolute;
 	top: 1vw;
 	left: 2vw;
 	width: 12.6vw;
 	height: 1.65vw;
 	cursor: pointer;
-}
+} */
 
-.lottery-container {
+/* .lottery-container {
 	position: relative;
 	top: 50%;
 	width: 100vw;
 	height: 26.48vw;
 	margin-top: -13.24vw;
 	overflow: hidden;
-}
+} */
 
-.lottery-container .lottery-left .img{
+/* .lottery-container .lottery-left .img{
 	position: absolute;
 	top: 3vw;
 	left: 17vw;
 	width: 37.6vw;
 	height: 22.2vw;
+} */
+
+.top-logo-btn {
+	position: absolute;
+	top: 5vh;
+	left: 2vw;
+	width: 16vw;
+	height: 5vh;
+	opacity: 0;
+	z-index: 9;
+	cursor: pointer;
 }
 
 .lottery-container .lottery-right .setting{
 	position: absolute;
-	top: 3vw;
-	right: 25vw;
-	width: 17.8vw;
-	height: 20.6vw;
+	top: 20vh;
+	right: 14vw;
+	width: 29.4vw;
+	height: 60.56vh;
 }
 
 .lottery-container .lottery-right .title {
 	position: absolute;
-	top: 4vw;
-	right: 32vw;
+	top: 24vh;
+	right: 26vw;
 	color: #E13907;
-	font-size: 0.1rem;
+	font-size: 0.14rem;
 }
 
 .lottery-container .lottery-right .title .num {
 	color: #999;
-	font-size: 0.07rem;
+	font-size: 0.1rem;
 	margin-left: 0.5vw;
 }
 
 .lottery-container .lottery-right .select_lucky_number {
 	position: absolute;
-	top: 6.5vw;
-	right: 31vw;
+	top: 30vh;
+	right: 26vw;
 	width: 5vw;
-	height: 2vw;
+	height: 5vh;
 	border: none;
 	background: rgba(0, 0, 0, .1);
 	padding: 0 0.5vw;
 	border-radius: 0.2vw;
 	text-align: center;
-	font-size: 0.1rem;
+	font-size: 0.14rem;
 }
 
 .lottery-container .lottery-right .select_lucky_number:focus {
@@ -93,39 +104,39 @@ i {
 
 .lottery-container .lottery-right .button {
 	position: absolute;
-	bottom: 4vw;
-	right: 29.5vw;
-	width: 8.8vw;
-	height: 2.3vw;
+	bottom: 25vh;
+	right: 20vw;
+	width: 15vw;
+	height: 6vh;
 	color: #fff;
-	font-size: 0.07rem;
+	font-size: 0.1rem;
 }
 
 .lottery-container .lottery-right .button .button-img {
-	width: 8.8vw;
-	height: 2.3vw;
+	width: 15vw;
+	height: 6vh;
 }
 
 .lottery-container .lottery-right .button .start {
 	position: absolute;
-	width: 8.8vw;
-	height: 2.3vw;
-	line-height: 2.3vw;
+	width: 15vw;
+	height: 5vh;
+	line-height: 5vh;
 	left: 0;
 	top: 0;
 	text-align: center;
-	font-size: .07rem;
+	font-size: .1rem;
 }
 
 ::-webkit-input-placeholder {
-	font-size: 0.07rem;
+	font-size: 0.08rem;
 }
 ::-moz-placeholder { 
-	font-size: 0.07rem;
+	font-size: 0.08rem;
 }
 :-ms-input-placeholder {
-	font-size: 0.07rem;
+	font-size: 0.08rem;
 }
 :-moz-placeholder {
-	font-size: 0.07rem;
+	font-size: 0.08rem;
 }

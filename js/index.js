@@ -4,7 +4,7 @@ var curNum = 0
 var curId = getQueryVariable('id')
 localStorage.setItem('curId', curId)
 
-var locaScreen = [10, 40, 70, 110, 150, 190, 230, 280]; //弹幕位置
+var locaScreen = [20, 70, 120, 170, 220, 270, 320, 370, 420, 470, 520, 570, 620, 670, 720]; //弹幕位置
 var timer;
 var timer1;
 init ()
@@ -23,6 +23,7 @@ function getQueryVariable (variable) {
 
 function init () {
   timer = setInterval(function () {
+    // personArray = JSON.parse(localStorage.getItem('personArray'))
     if (personArray.length >= 550) {
       return false
     }
@@ -42,6 +43,7 @@ function initScreen () { //初始化屏幕
     url: "https://nianhui.cloudmas.cn/lottery/users/" + curId,
     dataType: "json",
     async: false,
+    global: false,
     success: function (res) {
       if (res.length > 0) {
         res.forEach((item, index) => {
@@ -52,7 +54,8 @@ function initScreen () { //初始化屏幕
       }
     },
     error: function (err) {
-      alert("请求数据失败")
+      console.log('请求用户数据失败' + err)
+      // alert("请求数据失败")
     }
   })
 }
@@ -76,7 +79,7 @@ var olN = 0
 function createScreen (elem) {
   var _top = 0;
   var _left = $(window).width();
-  var lN = Math.floor(8 * Math.random());
+  var lN = Math.floor(15 * Math.random());
   if (olN == lN) {
     lN++;
     if (lN > locaScreen.length - 1) {
@@ -85,7 +88,7 @@ function createScreen (elem) {
   }
   olN = lN;
   _top = locaScreen[lN];
-  //初始弹幕的位置
+  //初始签到的位置
   $(elem).css({
     position: 'absolute',
     left: _left,
@@ -94,7 +97,7 @@ function createScreen (elem) {
   });
 
   //执行动画时间
-  var time = 30000;
+  var time = 10000;
 
   //执行动画
   $(elem).animate({
@@ -106,5 +109,5 @@ function createScreen (elem) {
 }
 
 $('#goLottery').click(function () {
-  window.location.href = "C:/WorkPlace/annual/2020/lottery/views/lottery.html"
+  window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/lottery.html"
 })

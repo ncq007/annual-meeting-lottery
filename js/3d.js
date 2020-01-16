@@ -79,7 +79,7 @@
         element.translateZ = -depth * 200;
 
         setTimeout(function (element) {
-          var random = Math.floor(Math.random() * 3) + 4; // 调转速
+          var random = Math.floor(Math.random() * 3) + 10; // 调转速
           tick(function () {
             if (!M.isStop) {
               element.translateZ >= 200 ? element.translateZ = -depth * 200 : element.translateZ += random;
@@ -92,7 +92,7 @@
       var thisElement = $('.js_current_dom')[0];
       Transform(thisElement);
       tick(function () {
-        thisElement.translateZ >= 200 ? thisElement.translateZ = 0 : thisElement.translateZ += 4;
+        thisElement.translateZ >= 200 ? thisElement.translateZ = 0 : thisElement.translateZ += 10;
       })
     }
 

@@ -7,7 +7,7 @@
 html, body {
 	width: 100vw;
 	height: 100vh;
-	background: url('../images/bg.jpg') no-repeat;
+	background: url('../images/bg.png') no-repeat;
 	background-size: 100% 100%;
 	overflow: hidden;
 }
@@ -25,122 +25,67 @@ i {
   -webkit-box-orient: vertical;
 }
 
-.top-left {
-	position: absolute;
-	width: 11.7vw;
-	height: 11.2vw;
-	top: 0vw;
-	left: 0;
-}
-
-.top-right {
-	position: absolute;
-	width: 11.7vw;
-	height: 11.2vw;
-	top: 0;
-	right: 0;
-}
-
-.top-logo {
-	position: absolute;
-	top: 1vw;
-	right: 50%;
-	width: 12.6vw;
-	height: 1.65vw;
-	margin-right: -6.3vw;
+.container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
 }
 
 .top-logo-btn {
 	position: absolute;
-	top: 1vw;
-	right: 50%;
-	width: 12.6vw;
-	height: 1.65vw;
-	margin-right: -6.3vw;
+	top: 5vh;
+	left: 2vw;
+	width: 16vw;
+	height: 5vh;
 	opacity: 0;
 	z-index: 9;
 	cursor: pointer;
 }
 
-.footer {
+.container .user-center {
+	position: relative;
+	z-index: 9;
+}
+
+.container .user-container {
+	position: relative;
+	z-index: 5;
+}
+
+.container .user-center .title {
 	position: absolute;
-	width: 100vw;
-	height: 6.1vw;
-	bottom: 0;
+	top: 7vh;
+	left: 50%;
+	margin-left: -17vw;
+	width: 36.04vw;
+	height: 27.32vh;
+}
+
+.container .user-center .gift-img {
+	position: absolute;
+	top: 38vh;
+	left: 50%;
+	margin-left: -18vw;
+	width: 38.96vw;
+	height: 53.24vh;
+}
+
+.container .user-center .code {
+	position: absolute;
+	width: 18vw;
+	height: 25vh;
+	left: 41vw;
+	top: 58vh;
+}
+
+.container .user-container {
+	position: absolute;
+	top: 12vh;
+	bottom: 12vh;
 	left: 0;
-}
-
-.container {
-	position: relative;
-	top: 50%;
-	width: 100vw;
-	height: 26.48vw;
-	margin-top: -13.24vw;
+	right: 0;
 	overflow: hidden;
-}
-
-.container .user-left, .container .user-right {
-	position: relative;
-	z-index: 999;
-}
-
-.container .user-left .title {
-	position: absolute;
-	top: 1vw;
-	left: 4.5vw;
-	width: 15.4vw;
-	height: 5vw;
-}
-
-.container .user-left .gift-img {
-	position: absolute;
-	top: 6.5vw;
-	left: 1vw;
-	margin-top: 1vw;
-	width: 25.1vw;
-	height: 18.6vw;
-}
-
-.container .user-left .code {
-	position: absolute;
-	width: 10vw;
-	height: 10vw;
-	left: 6vw;
-	top: 14.3vw;
-}
-
-.container .user-middle {
-	position: absolute;
-	top: 4vw;
-	left: 18vw;
-	width: 64vw;
-	height: 20vw;
-	overflow: hidden;
-}
-
-.container .user-right .title {
-	position: absolute;
-	top: 1vw;
-	right: 3.5vw;
-	width: 15.4vw;
-	height: 5vw;
-}
-
-.container .user-right .gift-img {
-	position: absolute;
-	top: 6.5vw;
-	right: -4vw;
-	margin-top: 1vw;
-	width: 25.1vw;
-	height: 18.6vw;
-}
-
-.container .user-right .code {
-	position: absolute;
-	width: 10vw;
-	height: 10vw;
-	right: 6vw;
-	top: 14.3vw;
 }
 
 a {
@@ -155,13 +100,14 @@ a {
 	text-overflow: ellipsis;
 	/* opacity: 0; */
 	clear: both;
-	padding: 0 0.4vw;
-	border-radius: 30px;
+	padding: 0 0.5vw;
+	border-radius: .2rem;
 	box-sizing: border-box;
-	width: 11.5vw;
-	height: 2.3vw;
+	width: 20vw;
+	height: 5vh;
+	line-height: 5vh;
 	background-color:rgba(1,1,1,0.3);
-	font-size: .075rem;
+	font-size: .08rem;
 	color: #fff;
 	animation: colorchange 3s infinite alternate;
 	-webkit-animation: colorchange 3s infinite alternate;
@@ -170,16 +116,16 @@ a {
 
 
 .avatar {
-	width: 2vw;
-	height: 2vw;
-	margin: 0.15vw 0.25vw 0 0;
+	width: 4vh;
+	height: 4vh;
+	margin: -1vh 0.2vw 0 0;
 	border-radius: 50%;
 	vertical-align: middle;
 }
 
 .color {
 	color: #EFA227;
-	margin-left: 0.4vw;
+	margin-left: 0.8vw;
 }
 
 @keyframes colorchange {

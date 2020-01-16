@@ -10,11 +10,12 @@
 </head>
 
 <body>
-  <img class="top-logo" src="../images/logo.png" alt="">
+  <!-- <img class="top-logo" src="../images/logo.png" alt=""> -->
+  <button class="top-logo-btn" id="goIndex"></button>
   <div class="lottery-container">
-    <div class="lottery-left">
+    <!-- <div class="lottery-left">
       <img class="img" src="../images/lottery.png" alt="" />
-    </div>
+    </div> -->
     <div class="lottery-right">
       <img class="setting" src="../images/setting.png" alt="">
       <p class="title" id="curTitle"></p>
@@ -49,11 +50,14 @@
       var curNum = parseInt($(this).val())
       luckyNum = curNum
     })
+    $('#goIndex').click(function () {
+      window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
+    })
     $('#open').click(function () {
       if (luckyNum > 0) {
         localStorage.setItem('lucky_number', luckyNum)
         localStorage.setItem('start', true)
-        window.location.href = "C:/WorkPlace/annual/2020/lottery/views/start.html"
+        window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/start.html"
       } else {
         alert('请填写抽奖人数')
       }
