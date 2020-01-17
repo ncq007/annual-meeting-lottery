@@ -60,11 +60,11 @@ i {
 }
 
 .btn_circle {
-  height: 2.8vw;
-  width: 2.8vw;
+  height: 6vw;
+  width: 6vw;
   border: 0.5vw solid #eee;
-  line-height: 2.8vw;
-  font-size: .1rem;
+  line-height: 6vw;
+  font-size: .14rem;
   text-align: center;
   border-radius: 50%;
   background-color: #f00;
@@ -91,29 +91,6 @@ i {
   left: 50%;
   bottom: 12%;
   margin-left: -2.3vw;
-}
-
-.btn_scircle {
-  width: 4.6vw;
-  height: 11%;
-  line-height: 1.75;
-  font-size: .1rem;
-  text-align: center;
-  border-radius: 0.4vw;
-  background: #FFEB01;
-  color: #FF0400;
-  font-family: "FZDHTK";
-  text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
-  -webkit-text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
-  -moz-text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
-  *filter: Glow(color=#fff, strength=1);
-  cursor: pointer;
-  z-index: 9;
-  -webkit-transition: all 0.7s linear;
-  -moz-transition: all 0.7s linear;
-  -ms-transition: all 0.7s linear;
-  -o-transition: all 0.7s linear;
-  transition: all 0.7s linear;
 }
 
 .mask {
@@ -163,6 +140,17 @@ i {
 	margin-left: -10.95vw;
 	width: 21.9vw;
 	height: 12.7vh;
+}
+
+.winner-btn {
+  position: absolute;
+	top: 4vh;
+	left: 50%;
+	margin-left: -10.95vw;
+	width: 21.9vw;
+  height: 12.7vh;
+  z-index: 99;
+  opacity: 0;
 }
 
 .winner-list {

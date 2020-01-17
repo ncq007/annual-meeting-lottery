@@ -25,32 +25,6 @@ i {
   -webkit-box-orient: vertical;
 }
 
-/* .top-logo {
-	position: absolute;
-	top: 1vw;
-	left: 2vw;
-	width: 12.6vw;
-	height: 1.65vw;
-	cursor: pointer;
-} */
-
-/* .lottery-container {
-	position: relative;
-	top: 50%;
-	width: 100vw;
-	height: 26.48vw;
-	margin-top: -13.24vw;
-	overflow: hidden;
-} */
-
-/* .lottery-container .lottery-left .img{
-	position: absolute;
-	top: 3vw;
-	left: 17vw;
-	width: 37.6vw;
-	height: 22.2vw;
-} */
-
 .top-logo-btn {
 	position: absolute;
 	top: 5vh;

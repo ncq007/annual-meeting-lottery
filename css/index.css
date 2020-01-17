@@ -98,7 +98,6 @@ a {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	/* opacity: 0; */
 	clear: both;
 	padding: 0 0.5vw;
 	border-radius: .2rem;
@@ -106,14 +105,12 @@ a {
 	width: 20vw;
 	height: 5vh;
 	line-height: 5vh;
-	background-color:rgba(1,1,1,0.3);
-	font-size: .08rem;
+	background-color:rgba(1,1,1,0.1);
+	font-size: .1rem;
 	color: #fff;
 	animation: colorchange 3s infinite alternate;
 	-webkit-animation: colorchange 3s infinite alternate;
-	/*Safari and Chrome*/
 }
-
 
 .avatar {
 	width: 4vh;

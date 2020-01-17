@@ -7,8 +7,7 @@ localStorage.setItem('curId', curId)
 var locaScreen = [20, 70, 120, 170, 220, 270, 320, 370, 420, 470, 520, 570, 620, 670, 720]; //弹幕位置
 var timer;
 var timer1;
-init ()
-// initScreen()
+init()
 
 // js获取url参数值的几种方式
 function getQueryVariable (variable) {
@@ -23,16 +22,7 @@ function getQueryVariable (variable) {
 
 function init () {
   timer = setInterval(function () {
-    // personArray = JSON.parse(localStorage.getItem('personArray'))
-    if (personArray.length >= 550) {
-      return false
-    }
     initScreen() //初始屏幕
-    // if (personArray.length > 0) {
-    //   personArray.forEach((item, index) => {
-    //     $("#user").append(createScreenPraise(personArray[index].nick_name, personArray[index].avatar_url))
-    //   })
-    // }
   }, 1000)
 }
 
@@ -44,6 +34,7 @@ function initScreen () { //初始化屏幕
     dataType: "json",
     async: false,
     global: false,
+    timeout: 10000, //超时时间：10秒
     success: function (res) {
       if (res.length > 0) {
         res.forEach((item, index) => {
@@ -54,8 +45,12 @@ function initScreen () { //初始化屏幕
       }
     },
     error: function (err) {
-      console.log('请求用户数据失败' + err)
-      // alert("请求数据失败")
+      curNum++
+      if (curNum === 5) {
+        clearInterval(timer)
+        curNum = 0
+      }
+      console.log('请求用户数据失败' + curNum)
     }
   })
 }
@@ -97,7 +92,7 @@ function createScreen (elem) {
   });
 
   //执行动画时间
-  var time = 10000;
+  var time = 30000;
 
   //执行动画
   $(elem).animate({
@@ -109,5 +104,6 @@ function createScreen (elem) {
 }
 
 $('#goLottery').click(function () {
-  window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/lottery.html"
+  clearInterval(timer) // 离开页面清掉定时器
+  window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/lottery.html?id=" + curId
 })

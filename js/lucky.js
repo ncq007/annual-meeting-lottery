@@ -134,28 +134,6 @@ $(function () {
     }
     Obj.luckyList = sessList.concat(lotteryList)
     localStorage.setItem('lotteryList', JSON.stringify(Obj.luckyList))
-    for (var j = 0; j < lotteryList.length; j++) {
-      newLottery.push({
-        nick_name: lotteryList[j].nick_name,
-        avatar_url: lotteryList[j].avatar_url,
-        mobile: lotteryList[j].mobile
-      })
-    }
-    $.ajax({
-      type: "post",
-      url: "https://nianhui.cloudmas.cn/winning/users/" + curId,
-      data: JSON.stringify(newLottery),
-      // dataType: "json",
-      contentType: "application/json; charset=utf-8",
-      async: false,
-      traditional: true, //默认false
-      success: function (res) {
-        // 成功
-      },
-      error: function (err) {
-        // 失败
-      }
-    })
     for (var i = 0; i < Obj.luckyResult.length; i++) {
       showLuckyPeople(i)
     }
@@ -205,48 +183,6 @@ $(function () {
       iconRadius: 8, //图片的圆角
       data: personArray, //数据的地址数组
     })
-    // 所有已登记用户信息
-    // $.ajax({
-    //   type: "GET",
-    //   url: "https://nianhui.cloudmas.cn/lottery/users/" + curId,
-    //   dataType: "json",
-    //   async: false,
-    //   success: function (res) {
-    //     if (res.length > 0) {
-    //       var personArray = res //此为数组
-    //       //执行图片预加载并关闭加载试图
-    //       loadImage(personArray, function (img) {
-    //         $('.loader_file').hide()
-    //       })
-    //       Obj.M = $('.container').lucky({
-    //         row: 7, //每排显示个数  必须为奇数
-    //         col: 5, //每列显示个数  必须为奇数
-    //         depth: 14, //纵深度
-    //         iconW: 30, //图片的宽
-    //         iconH: 30, //图片的高
-    //         iconRadius: 8, //图片的圆角
-    //         data: personArray, //数据的地址数组
-    //       })
-    //     }
-    //   },
-    //   error: function (err) {
-    //     personArray = localStorage.getItem('personArray')
-    //     //执行图片预加载并关闭加载试图
-    //     loadImage(personArray, function (img) {
-    //       $('.loader_file').hide()
-    //     })
-    //     Obj.M = $('.container').lucky({
-    //       row: 7, //每排显示个数  必须为奇数
-    //       col: 5, //每列显示个数  必须为奇数
-    //       depth: 14, //纵深度
-    //       iconW: 30, //图片的宽
-    //       iconH: 30, //图片的高
-    //       iconRadius: 8, //图片的圆角
-    //       data: personArray, //数据的地址数组
-    //     })
-    //   }
-    // })
-
     randomLuckyArr()
     if (randomList.length > 0) {
       if (randomList.length >= parseInt(Obj.luckyNum)) {
@@ -256,14 +192,39 @@ $(function () {
         }, 1000)
         //人工获奖结果结束
       } else {
-        alert('中奖人数已经少于抽奖个数了~')
+        console.log('中奖人数已经少于抽奖个数了~')
       }
     } else {
-      alert('已经全部中过奖了~')
+      console.log('已经全部中过奖了~')
     }
   }
 
   $('#goIndex').click(function () {
     window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
+  })
+
+  $('winner-btn').click(function () {
+    for (var j = 0; j < lotteryList.length; j++) {
+      newLottery.push({
+        nick_name: lotteryList[j].nick_name,
+        avatar_url: lotteryList[j].avatar_url,
+        mobile: lotteryList[j].mobile
+      })
+    }
+    $.ajax({
+      type: "post",
+      url: "https://nianhui.cloudmas.cn/winning/users/" + curId,
+      data: JSON.stringify(newLottery),
+      timeout: 10000, //超时时间：10秒
+      contentType: "application/json; charset=utf-8",
+      async: true,
+      traditional: true, //默认false
+      success: function (res) {
+        // 成功
+      },
+      error: function (err) {
+        // 失败
+      }
+    })
   })
 })

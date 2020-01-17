@@ -6,20 +6,16 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="../js/rem.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <link rel="stylesheet" href="../css/lottery.css">
 </head>
 
 <body>
-  <!-- <img class="top-logo" src="../images/logo.png" alt=""> -->
-  <button class="top-logo-btn" id="goIndex"></button>
+  <!-- <button class="top-logo-btn" id="goIndex"></button> -->
   <div class="lottery-container">
-    <!-- <div class="lottery-left">
-      <img class="img" src="../images/lottery.png" alt="" />
-    </div> -->
     <div class="lottery-right">
       <img class="setting" src="../images/setting.png" alt="">
       <p class="title" id="curTitle"></p>
-      <!-- <p class="title">三等奖<span class="num">参与人数 521</span></p> -->
       <input type="text" name="select_lucky_number" class='select_lucky_number' placeholder="抽取人数" />
       <p class="button">
         <img class="button-img" src="../images/button.png" alt="">
@@ -27,41 +23,8 @@
       </p>
     </div>
   </div>
-  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript">
-    // 一次抽几人改变事件
-    var commonCode = [
-      { id: 3, title: '三等奖' },
-      { id: 2, title: '二等奖' },
-      { id: 1, title: '一等奖' },
-      { id: 9, title: '特等奖' },
-      { id: 5, title: '惊喜奖' },
-      { id: 6, title: '惊喜奖' },
-      { id: 7, title: '惊喜奖' },
-      { id: 8, title: '惊喜奖' }
-    ]
-    var curId = localStorage.getItem('curId')
-    let titleArr = commonCode.filter(item => {
-      return item.id === parseInt(curId)
-    })
-    var luckyNum = parseInt($(".select_lucky_number").val())
-    $("#curTitle").html(titleArr[0].title)
-    $(".select_lucky_number").bind('change', function () {
-      var curNum = parseInt($(this).val())
-      luckyNum = curNum
-    })
-    $('#goIndex').click(function () {
-      window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
-    })
-    $('#open').click(function () {
-      if (luckyNum > 0) {
-        localStorage.setItem('lucky_number', luckyNum)
-        localStorage.setItem('start', true)
-        window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/start.html"
-      } else {
-        alert('请填写抽奖人数')
-      }
-    })
+  <script> 
+    document.write('<script src="../js/lottery.js?v='+Math.random()+'"><\/script>');
   </script>
 </body>
 
