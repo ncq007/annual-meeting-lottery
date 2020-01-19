@@ -9,6 +9,7 @@ html, body {
 	height: 100vh;
 	background: url('../images/bg.png') no-repeat;
 	background-size: 100% 100%;
+	background-color: #f00;
 	overflow: hidden;
 }
 
@@ -55,7 +56,7 @@ i {
 
 .container .user-center .title {
 	position: absolute;
-	top: 7vh;
+	top: 65vh;
 	left: 50%;
 	margin-left: -17vw;
 	width: 36.04vw;
@@ -64,7 +65,7 @@ i {
 
 .container .user-center .gift-img {
 	position: absolute;
-	top: 38vh;
+	top: 6vh;
 	left: 50%;
 	margin-left: -18vw;
 	width: 38.96vw;
@@ -73,10 +74,9 @@ i {
 
 .container .user-center .code {
 	position: absolute;
-	width: 18vw;
-	height: 25vh;
-	left: 41vw;
-	top: 58vh;
+    height: 48vh;
+    left: 36.2vw;
+    top: 18vh;
 }
 
 .container .user-container {

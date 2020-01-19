@@ -11,7 +11,15 @@ var commonCode = [
   { id: 5, title: '惊喜奖' },
   { id: 6, title: '惊喜奖' },
   { id: 7, title: '惊喜奖' },
-  { id: 8, title: '惊喜奖' }
+  { id: 8, title: '惊喜奖' },
+  { id: 2023, title: '三等奖' },
+  { id: 2022, title: '二等奖' },
+  { id: 2021, title: '一等奖' },
+  { id: 2029, title: '特等奖' },
+  { id: 2025, title: '惊喜奖' },
+  { id: 2026, title: '惊喜奖' },
+  { id: 2027, title: '惊喜奖' },
+  { id: 2028, title: '惊喜奖' }
 ]
 var curId = localStorage.getItem('curId')
 let titleArr = commonCode.filter(item => {
@@ -25,9 +33,9 @@ $(".select_lucky_number").bind('change', function () {
   luckyNum = curNum
 })
 
-// $('#goIndex').click(function () {
-//   window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
-// })
+$('#goIndex').click(function () {
+  window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
+})
 
 $('#open').click(function () {
   if (luckyNum > 0) {

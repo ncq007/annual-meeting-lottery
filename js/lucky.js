@@ -3,6 +3,7 @@ $(function () {
   // luckyResult为抽奖结果的集合（数组）
   // luckyNum为5那么luckyResult的length也为5
   var personArray = new Array // 存所有已签到用户
+  var lotteryList = [] // 抽奖结果的集合
   var Obj = {}
   Obj.luckyResult = []
   Obj.luckyList = []
@@ -123,8 +124,6 @@ $(function () {
     $(this).hide()
     localStorage.setItem('start', false)
     var sessList = JSON.parse(localStorage.getItem('lotteryList')) || []
-    var lotteryList = [],
-      newLottery = []
     randomList = filterData(personArray, sessList) || []
     if (Obj.luckyResult.length > 0) {
       $('.container').html('')
@@ -200,10 +199,37 @@ $(function () {
   }
 
   $('#goIndex').click(function () {
-    window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
+    window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/lottery.html?id=" + curId
   })
 
-  $('winner-btn').click(function () {
+  // 防止误刷新中奖名单消失
+  if (Obj.luckyNum > 0 && $('.lpl_userInfo').length === 0 && localStorage.getItem('start') === 'false') {
+    let curArr = localStorage.getItem('lotteryList') ? JSON.parse(localStorage.getItem('lotteryList')) : []
+    if (curArr.length > 0) {
+      curArr = curArr.slice(curArr.length - Obj.luckyNum, curArr.length)
+    }
+    for (var i = 0; i < curArr.length; i++) {
+      var $luckyEle = $('<img class="lucky_icon" />')
+      var $userName = $('<p class="lucky_userName"></p>')
+      var $userTel = $('<p class="lucky_userTel"></p>')
+      var $fragEle = $('<div class="lucky_userInfo"></div>')
+      $fragEle.append($luckyEle, $userName, $userTel)
+      $luckyEle.attr('src', curArr[i].avatar_url)
+      $userName.text(curArr[i].nick_name)
+      $userTel.text(curArr[i].mobile)
+      $luckyEle.attr('class', 'lpl_userImage').attr('style', '')
+      $userName.attr('class', 'lpl_userName').attr('style', '')
+      $userTel.attr('class', 'lpl_userTel').attr('style', '')
+      $fragEle.attr('class', 'lpl_userInfo').attr('style', '')
+      $('.winner-list').append($fragEle)
+    }
+    $('.container').hide()
+    $('.winners').show()
+    $('.winner-img').show()
+  }
+
+  $('.winner-btn').click(function () {
+    var newLottery = []
     for (var j = 0; j < lotteryList.length; j++) {
       newLottery.push({
         nick_name: lotteryList[j].nick_name,

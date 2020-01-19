@@ -9,6 +9,8 @@ var timer;
 var timer1;
 init()
 
+$('#code').attr('src', '../images/' + curId + '.png')
+
 // js获取url参数值的几种方式
 function getQueryVariable (variable) {
   let query = window.location.search.substring(1);
