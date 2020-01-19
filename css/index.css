@@ -56,7 +56,7 @@ i {
 
 .container .user-center .title {
 	position: absolute;
-	top: 65vh;
+	top: 70vh;
 	left: 50%;
 	margin-left: -17vw;
 	width: 36.04vw;
@@ -67,16 +67,17 @@ i {
 	position: absolute;
 	top: 6vh;
 	left: 50%;
-	margin-left: -18vw;
-	width: 38.96vw;
-	height: 53.24vh;
+	margin-left: -24vw;
+	width: 54.2vw;
+	height: 74.1vh;
 }
 
 .container .user-center .code {
 	position: absolute;
-    height: 48vh;
-    left: 36.2vw;
-    top: 18vh;
+	height: 40vh;
+	left: 39.5vw;
+	top: 31.5vh;
+	border-radius: 1vh;
 }
 
 .container .user-container {

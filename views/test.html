@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    var count = 0
+    function init() {
+      // 获取数据 所有已登记用户信息
+      let data = {
+        "nick_name": "用户昵称" + count,
+        "avatar_url": "https://wx.qlogo.cn/mmopen/vi_32/xcOKLBuONY7GRqBHPFFbUudeicbkgyxO0tpCTzr50jdEfY5IcJq7t4JeVj2QBUT39UTQWFeJsNqAaia7LiaTDqBmQ/132",
+        "mobile": "6" + count
+      }
+      $.ajax({
+        type: "post",
+        url: "https://nianhui.cloudmas.cn/lottery/draw/2030",
+        // dataType: "json",
+        contentType: 'application/json',
+        async: true,
+        data: JSON.stringify(data),
+        success: function (res) {
+          count++
+          // alert('success:' + JSON.stringify(res))
+        },
+        error: function (err) {
+          alert('error' + JSON.stringify(res))
+        }
+      })
+    }
+
+    // init()
+    let timer = setInterval(function () {
+      init()
+      if (count >= 200) {
+        clearInterval(timer)
+      }
+    }, 500)
+
+    var count1 = 201
+    function init1() {
+      // 获取数据 所有已登记用户信息
+      let data = {
+        "nick_name": "用户昵称" + count,
+        "avatar_url": "https://wx.qlogo.cn/mmopen/vi_32/xcOKLBuONY7GRqBHPFFbUudeicbkgyxO0tpCTzr50jdEfY5IcJq7t4JeVj2QBUT39UTQWFeJsNqAaia7LiaTDqBmQ/132",
+        "mobile": "7" + count
+      }
+      $.ajax({
+        type: "post",
+        url: "https://nianhui.cloudmas.cn/lottery/draw/2021",
+        // dataType: "json",
+        contentType: 'application/json',
+        async: true,
+        data: JSON.stringify(data),
+        success: function (res) {
+          count++
+          // alert('success:' + JSON.stringify(res))
+        },
+        error: function (err) {
+          alert('error' + JSON.stringify(res))
+        }
+      })
+    }
+
+    // init()
+    let timer1 = setInterval(function () {
+      init1()
+      if (count1 >= 400) {
+        clearInterval(timer1)
+      }
+    }, 500)
+  </script>
+</body>
+
+</html>
