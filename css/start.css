@@ -28,6 +28,17 @@ i {
 	cursor: pointer;
 }
 
+.top-right-btn {
+  position: absolute;
+	top: 0;
+	right: 0;
+	width: 20vw;
+	height: 10vh;
+	opacity: 0;
+	z-index: 9;
+	cursor: pointer;
+}
+
 .container {
   position: absolute;
   -webkit-transform: perspective(1000px);
@@ -65,7 +76,7 @@ i {
   width: 6vw;
   border: 0.5vw solid #eee;
   line-height: 6vw;
-  font-size: .14rem;
+  font-size: .2rem;
   text-align: center;
   border-radius: 50%;
   background-color: #f00;
@@ -106,18 +117,17 @@ i {
 }
 
 .lucky_icon {
-  height: 70%;
-  width: 70%;
+  height: 50%;
+  width: 50%;
   border-radius: 50%;
-  margin-left: 15%;
 }
 
 .lucky_userInfo {
   position: absolute;
-  height: 2.3vw;
-  width: 10vw;
+  height: 25vw;
+  width: 25vw;
   color: #fff;
-  font-size: .1rem;
+  font-size: .14rem;
   text-align: center;
 }
 
@@ -128,8 +138,8 @@ i {
 
 .winners {
   position: relative;
-  left: 20vw;
-	width: 60vw;
+  left: 15vw;
+	width: 70vw;
 	height: 100vh;
 	overflow: hidden;
 }
@@ -165,7 +175,7 @@ i {
 }
 
 .lpl_userInfo{
-  width: 45%;
+  width: 48%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -196,11 +206,16 @@ i {
 
 .lucky_userName {
   text-align: center;
-  margin-top: 0.5vw;
+  margin-top: 1vw;
   display: block;
-  /* overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; */
+  font-size: 0.14rem;
+}
+
+.lucky_userTel {
+  text-align: center;
+  margin-top: 1vw;
+  display: block;
+  font-size: 0.14rem;
 }
 
 .lucky_prize {

@@ -1,4 +1,5 @@
 var personArray = JSON.parse(localStorage.getItem('personArray')) // 存所有已签到用户
+var curId = localStorage.getItem('curId')
 var curNum = 0
 var timer
 
@@ -21,19 +22,29 @@ var commonCode = [
   { id: 2027, title: '惊喜奖' },
   { id: 2028, title: '惊喜奖' }
 ]
-var curId = localStorage.getItem('curId')
+
+// 抽取人数
 let titleArr = commonCode.filter(item => {
   return item.id === parseInt(curId)
 })
 var luckyNum = parseInt($(".select_lucky_number").val())
-$("#curTitle").html(titleArr[0].title)
+if (titleArr.length > 0) {
+  $("#curTitle").html(titleArr[0].title)
+} else {
+  $("#curTitle").html('奖')
+}
 
 $(".select_lucky_number").bind('change', function () {
   var curNum = parseInt($(this).val())
+  if (curNum >= 10) {
+    $(this).val(10)
+    curNum = 10
+  }
   luckyNum = curNum
 })
 
 $('#goIndex').click(function () {
+  // window.location.href = "http://127.0.0.1:5500/views/index.html?id=" + curId
   window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
 })
 
@@ -42,14 +53,17 @@ $('#open').click(function () {
     localStorage.setItem('lucky_number', luckyNum)
     localStorage.setItem('start', true)
     clearInterval(timer)
-    window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/start.html?id=" + curId
+    if (curId) {
+      // window.location.href = "http://127.0.0.1:5500/views/start.html?id=" + curId
+      window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/start.html?id=" + curId
+    }
   } else {
     alert('请填写抽奖人数')
   }
 })
 
-function initScreen () { //初始化屏幕
-  // 获取数据
+// 获取数据
+function getUser () { 
   $.ajax({
     type: "GET",
     url: "https://nianhui.cloudmas.cn/lottery/users/" + curId,
@@ -76,8 +90,10 @@ function initScreen () { //初始化屏幕
 
 function init () {
   timer = setInterval(function () {
-    initScreen() //初始屏幕
+    getUser()
   }, 1000)
 }
 
-init()
+if (curId) {
+  init()
+}

@@ -5,11 +5,15 @@ var curId = getQueryVariable('id')
 localStorage.setItem('curId', curId)
 
 var locaScreen = [20, 70, 120, 170, 220, 270, 320, 370, 420, 470, 520, 570, 620, 670]; //弹幕位置
-var timer;
-var timer1;
-init()
+var timer
+var timer1
 
-$('#code').attr('src', '../images/' + curId + '.png')
+if (curId) {
+  $('#code').attr('src', '../images/' + curId + '.png')
+  init()
+} else {
+  $('#code').attr('src', '../images/3.png')
+}
 
 // js获取url参数值的几种方式
 function getQueryVariable (variable) {
@@ -48,9 +52,18 @@ function initScreen () { //初始化屏幕
     },
     error: function (err) {
       curNum++
-      if (curNum === 5) {
+      if (curNum === 10) {
         clearInterval(timer)
-        curNum = 0
+        $.ajax({
+          type: "GET",
+          url: "../js/data.json",
+          async: true,
+          timeout: 10000, //超时时间：10秒
+          success: function (res) {
+            commonArray = res.data
+            localStorage.setItem('commonArray', JSON.stringify(commonArray))
+          }
+        })
       }
       console.log('请求用户数据失败' + curNum)
     }
@@ -107,5 +120,8 @@ function createScreen (elem) {
 
 $('#goLottery').click(function () {
   clearInterval(timer) // 离开页面清掉定时器
-  window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/lottery.html?id=" + curId
+  if (curId) {
+    // window.location.href = "http://127.0.0.1:5500/views/lottery.html?id=" + curId
+    window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/lottery.html?id=" + curId
+  }
 })

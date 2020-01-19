@@ -84,21 +84,21 @@ $(function () {
       $(".mask").fadeIn(200)
       $luckyEle.attr('src', randomList[Obj.luckyResult[num]].avatar_url)
       $userName.text(randomList[Obj.luckyResult[num]].nick_name)
-      $userTel.text(randomList[Obj.luckyResult[num]].mobile)
+      $userTel.text(randomList[Obj.luckyResult[num]].mobile.replace(/^(\d{3})\d*(\d{4})$/,'$1****$2'))
       $fragEle.animate({
         'left': '50%',
         'top': '50%',
-        'height': '10vw',
-        'width': '10vw',
-        'margin-left': '-5vw',
-        'margin-top': '-5vw'
+        'height': '16vw',
+        'width': '16vw',
+        'margin-left': '-8vw',
+        'margin-top': '-8vw'
       }, 1000, function () {
         setTimeout(function () {
           $fragEle.animate({
-            'height': '10vw',
-            'width': '10vw',
-            'margin-left': '5vw',
-            'margin-top': '-2.5vw'
+            'height': '16vw',
+            'width': '16vw',
+            'margin-left': '8vw',
+            'margin-top': '-4vw'
           }, 400, function () {
             $(".mask").fadeOut(0)
             $luckyEle.attr('class', 'lpl_userImage').attr('style', '')
@@ -168,38 +168,46 @@ $(function () {
 
   //此为人工写入获奖结果
   if (localStorage.getItem('start') === 'true') {
-    personArray = JSON.parse(localStorage.getItem('personArray'))
-    //执行图片预加载并关闭加载试图
-    loadImage(personArray, function (img) {
-      $('.loader_file').hide()
-    })
-    Obj.M = $('.container').lucky({
-      row: 7, //每排显示个数  必须为奇数
-      col: 5, //每列显示个数  必须为奇数
-      depth: 14, //纵深度
-      iconW: 30, //图片的宽
-      iconH: 30, //图片的高
-      iconRadius: 8, //图片的圆角
-      data: personArray, //数据的地址数组
-    })
-    randomLuckyArr()
-    if (randomList.length > 0) {
-      if (randomList.length >= parseInt(Obj.luckyNum)) {
-        Obj.M.open()
-        setTimeout(function () {
-          $("#stop").show(500)
-        }, 1000)
-        //人工获奖结果结束
+    personArray = localStorage.getItem('personArray') ? JSON.parse(localStorage.getItem('personArray')) : []
+    if (personArray.length > 0) {
+      //执行图片预加载并关闭加载试图
+      loadImage(personArray, function (img) {
+        $('.loader_file').hide()
+      })
+      Obj.M = $('.container').lucky({
+        row: 7, //每排显示个数  必须为奇数
+        col: 5, //每列显示个数  必须为奇数
+        depth: 14, //纵深度
+        iconW: 30, //图片的宽
+        iconH: 30, //图片的高
+        iconRadius: 8, //图片的圆角
+        data: personArray, //数据的地址数组
+      })
+      randomLuckyArr()
+      if (randomList.length > 0) {
+        if (randomList.length >= parseInt(Obj.luckyNum)) {
+          Obj.M.open()
+          setTimeout(function () {
+            $("#stop").show(500)
+          }, 1000)
+          //人工获奖结果结束
+        } else {
+          alert('中奖人数已经少于抽奖个数了~')
+        }
       } else {
-        console.log('中奖人数已经少于抽奖个数了~')
+        alert('已经全部中过奖了~')
       }
-    } else {
-      console.log('已经全部中过奖了~')
     }
   }
 
-  $('#goIndex').click(function () {
+  $('#goLottery').click(function () {
+    // window.location.href = "http://127.0.0.1:5500/views/lottery.html?id=" + curId
     window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/lottery.html?id=" + curId
+  })
+
+  $('#goIndex').click(function () {
+    // window.location.href = "http://127.0.0.1:5500/views/index.html?id=" + curId
+    window.location.href = "C:/WorkPlace/annual/2020/annual-meeting-lottery/views/index.html?id=" + curId
   })
 
   // 防止误刷新中奖名单消失
