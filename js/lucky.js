@@ -88,17 +88,17 @@ $(function () {
       $fragEle.animate({
         'left': '50%',
         'top': '50%',
-        'height': '16vw',
-        'width': '16vw',
-        'margin-left': '-8vw',
-        'margin-top': '-8vw'
+        'height': '40vw',
+        'width': '40vw',
+        'margin-left': '-20vw',
+        'margin-top': '-20vw'
       }, 1000, function () {
         setTimeout(function () {
           $fragEle.animate({
-            'height': '16vw',
-            'width': '16vw',
-            'margin-left': '8vw',
-            'margin-top': '-4vw'
+            'height': '40vw',
+            'width': '40vw',
+            'margin-left': '20vw',
+            'margin-top': '-10vw'
           }, 400, function () {
             $(".mask").fadeOut(0)
             $luckyEle.attr('class', 'lpl_userImage').attr('style', '')

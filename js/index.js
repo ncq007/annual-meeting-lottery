@@ -4,7 +4,7 @@ var curNum = 0
 var curId = getQueryVariable('id')
 localStorage.setItem('curId', curId)
 
-var locaScreen = [20, 70, 120, 170, 220, 270, 320, 370, 420, 470, 520, 570, 620, 670]; //弹幕位置
+var locaScreen = [0, 80, 160, 240, 320, 400, 480, 560]; //弹幕位置
 var timer
 var timer1
 
@@ -89,7 +89,7 @@ var olN = 0
 function createScreen (elem) {
   var _top = 0;
   var _left = $(window).width();
-  var lN = Math.floor(14 * Math.random());
+  var lN = Math.floor(8 * Math.random());
   if (olN == lN) {
     lN++;
     if (lN > locaScreen.length - 1) {

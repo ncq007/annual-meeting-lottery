@@ -76,7 +76,7 @@ i {
   width: 6vw;
   border: 0.5vw solid #eee;
   line-height: 6vw;
-  font-size: .2rem;
+  font-size: .24rem;
   text-align: center;
   border-radius: 50%;
   background-color: #f00;
@@ -117,8 +117,8 @@ i {
 }
 
 .lucky_icon {
-  height: 50%;
-  width: 50%;
+  height: 30%;
+  width: 30%;
   border-radius: 50%;
 }
 
@@ -138,8 +138,8 @@ i {
 
 .winners {
   position: relative;
-  left: 15vw;
-	width: 70vw;
+  left: 2vw;
+	width: 96vw;
 	height: 100vh;
 	overflow: hidden;
 }
@@ -175,17 +175,17 @@ i {
 }
 
 .lpl_userInfo{
-  width: 48%;
+  width: 49%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 8vh;
+  height: 10vh;
   margin-bottom: 2vh;
 }
 
 .lpl_userImage {
-  width: 6vh;
-  height: 6vh;
+  width: 10vh;
+  height: 10vh;
   border: 2px solid #ccc;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -195,27 +195,30 @@ i {
 
 .lpl_userTel {
   color: #fff;
-  font-size: 0.14rem;
+  font-size: 0.24rem;
 }
 
 .lpl_userName {
   margin-right: 1vw;
   color: #fff;
-  font-size: 0.14rem;
+  font-size: 0.24rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .lucky_userName {
   text-align: center;
   margin-top: 1vw;
   display: block;
-  font-size: 0.14rem;
+  font-size: 0.24rem;
 }
 
 .lucky_userTel {
   text-align: center;
   margin-top: 1vw;
   display: block;
-  font-size: 0.14rem;
+  font-size: 0.24rem;
 }
 
 .lucky_prize {

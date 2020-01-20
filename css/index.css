@@ -101,30 +101,30 @@ a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	clear: both;
-	padding: 0 0.5vw;
-	border-radius: .2rem;
+	padding: 0 2vw;
+	border-radius: 5vw;
 	box-sizing: border-box;
-	width: 20vw;
-	height: 5vh;
-	line-height: 5vh;
+	width: 44vw;
+	height: 8vh;
+	line-height: 8vh;
 	background-color:rgba(1,1,1,0.1);
-	font-size: .1rem;
+	font-size: .22rem;
 	color: #fff;
 	animation: colorchange 3s infinite alternate;
 	-webkit-animation: colorchange 3s infinite alternate;
 }
 
 .avatar {
-	width: 4vh;
-	height: 4vh;
-	margin: -1vh 0.2vw 0 0;
+	width: 7vh;
+	height: 7vh;
+	margin: -1vw 1vw 0 0;
 	border-radius: 50%;
 	vertical-align: middle;
 }
 
 .color {
 	color: #EFA227;
-	margin-left: 0.8vw;
+	margin-left: 1vw;
 }
 
 @keyframes colorchange {
